@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugarbaker's Peritoneal Carcinomatosis Index (PCI) Calculator</title>
+<style>
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  form {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  select {
+    margin-bottom: 15px;
+  }
+
+  #result {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #messageBox {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  #copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center;">Sugarbaker's Peritoneal Carcinomatosis Index (PCI) Calculator</h2>
+  <p class="subheading">This application calculates the probability of achieving Complete Cytoreduction (CC-0 Score), based on the amount of Peritoneal Deposits.</p>
+        <p>Insert the Lesion Score LS: based on the size largest deposit observed in Imaging or Laparotomy</p>
+        <p>Kindly insert the following data for the calculator:</p>
+
+  <form id="pciForm">
+    <label for="central">0-Central:</label>
+    <select id="central">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="rightUpper">1-Right Upper:</label>
+    <select id="rightUpper">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="epigastrium">2-Epigastrium:</label>
+    <select id="epigastrium">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="leftUpper">3-Left upper:</label>
+    <select id="leftUpper">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="leftFlank">4-Left flank:</label>
+    <select id="leftFlank">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="leftLower">5-Left lower:</label>
+    <select id="leftLower">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="pelvis">6-Pelvis:</label>
+    <select id="pelvis">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="rightLower">7-Right lower:</label>
+    <select id="rightLower">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="rightFlank">8-Right flank:</label>
+    <select id="rightFlank">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="upperJejunum">9-Upper jejunum:</label>
+    <select id="upperJejunum">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="lowerJejunum">10-Lower jejunum:</label>
+    <select id="lowerJejunum">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="upperIleum">11-Upper ileum:</label>
+    <select id="upperIleum">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <label for="lowerIleum">12-Lower Ileum:</label>
+    <select id="lowerIleum">
+      <option value="0">LS0 - No Tumour Seen</option>
+      <option value="1">LS1 - Size of Largest Deposit &lt;0.5cm</option>
+      <option value="2">LS2 - Size of the Largest Deposit 0.5-5cm</option>
+      <option value="3">LS3 - Size of the Largest Deposit &gt; 5cm</option>
+    </select>
+
+    <input id="calculateButton" type="submit" value="Calculate PCI">
+  </form>
+
+  <div id="result">Final PCI</div>
+  <div id="messageBox"></div>
+</div>
+
+<div id="copyright">
+  &copy; Copyright by Dr. Shouptik Basu
+</div>
+
+<script>
+document.getElementById('pciForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  const values = []; // Array to store selected values
+
+  // Loop through each entry and get its selected value
+  for (let i = 0; i <= 12; i++) {
+    const entryValue = document.getElementById(getId(i)).value;
+    values.push(parseInt(entryValue)); // Convert value to integer and push into the array
+  }
+
+  // Calculate the final PCI by summing up the values
+  const finalPCI = values.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  
+  // Display the final PCI
+  document.getElementById('result').innerText = `Final PCI: ${finalPCI}`;
+
+  // Display color-coded message
+  const messageBox = document.getElementById('messageBox');
+  let message = "";
+  let color = "";
+
+  if (finalPCI < 15) {
+    message = "Likely chance of achieving CC-0/1 is High";
+    color = "green";
+  } else if (finalPCI >= 15 && finalPCI <= 25) {
+    message = "Likely chance of achieving CC-0/1 is Moderate";
+    color = "yellow";
+  } else {
+    message = "Likely chance of achieving CC-0/1 is Low";
+    color = "red";
+  }
+
+  messageBox.innerText = message;
+  messageBox.style.backgroundColor = color;
+});
+
+function getId(i) {
+  return {
+    0: "central",
+    1: "rightUpper",
+    2: "epigastrium",
+    3: "leftUpper",
+    4: "leftFlank",
+    5: "leftLower",
+    6: "pelvis",
+    7: "rightLower",
+    8: "rightFlank",
+    9: "upperJejunum",
+    10: "lowerJejunum",
+    11: "upperIleum",
+    12: "lowerIleum"
+  }[i];
+}
+</script>
+
+</body>
+</html>
